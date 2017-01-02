@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Accident page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="formstyle.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="formscript.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  
+</head>
+<body>
+
+<div class="container">
+  <div class="form-container">
+  <h2>Accident Registration Form</h2><br>
+  <form class="form-horizontal">
+
+    <div id="form" class="form-group">
+      <label class="control-label col-sm-2" for="refno">Reference Number</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="refno" required >
+      </div>
+    </div>
+
+    <div  id="form" class="form-group">
+        <label class="control-label col-sm-2" for="dob">Accident Date</label>
+        <div class="col-sm-10" >
+        <input class="form-control" id="datepicker" name="date" placeholder="DD/MM/YYY"  required/>
+        </div>
+    </div>
+
+     <div id="form" class="form-group">
+      <label class="control-label col-sm-2" for="time">Accident time</label>
+      <div class="col-sm-10">
+        <input type="time" class="form-control" id="time" required>
+      </div>
+    </div>
+
+     <div id="form" class="form-group">
+          <label class="control-label col-sm-2" for="acdttype">Accident type</label>
+          <div class="col-sm-10">
+              <select type="select" class="form-control" id="acdttype" required>
+                  <option>--Select--</option>
+                  <option>Hit Pedestrian</option>
+                  <option>Head On</option>
+                  <option>Side Swipe</option>
+                  <option>Hit from Rear</option>
+                  <option>Hit animal</option>
+                  <option>Ran off the Road</option>
+              </select>
+          </div>
+      </div>
+
+ <div id="form" class="form-group">
+      <label class="control-label col-sm-2" for="city">City</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="city" maxlength="100" required>
+      </div>
+    </div>
+
+   <div id="form" class="form-group">
+          <label class="control-label col-sm-2" for="district">District type</label>
+          <div class="col-sm-10">
+              <select type="select" class="form-control" id="district" required>
+                  <option>--Select--</option>
+                  <option>Alappuzha</option>
+                  <option>Ernakulam</option>
+                  <option>Idukki</option>
+                  <option>Kannur</option>
+                  <option>Kasaragod</option>
+                  <option>Kollam</option>
+                  <option>Kottayam</option>
+                  <option>Kozhikode</option>
+                  <option>Palakkad</option>
+                  <option>Pathanamthitta</option>
+                  <option>Thiruvananthapuram</option>
+                  <option>Thrissur</option>
+                  <option>Wayanad</option>             
+              </select>
+          </div>
+      </div>
+
+      <div id="form" class="form-group">
+      <label class="control-label col-sm-2" for="vehicles">No of Vehicles</label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" id="vehicles" placeholder="Must be greater than 0" required>
+      </div>
+    </div>
+
+       <div id="form" class="form-group">
+      <label class="control-label col-sm-2" for="casuality">No of Casualties</label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" id="casuality" required>
+      </div>
+    </div>
+
+<div id="form" class="form-group">
+      <label class="control-label col-sm-2" for="name">Reporting Officer Name</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="name" maxlength="100" required>
+      </div>
+    </div>
+  <!--imggggggggggg -->
+<div id="img" class="form-group">
+   <label class="control-label col-sm-2 image1">Upload image</label>
+   
+<input id="input-1" type="file" class="file">
+</div><br><br>
+
+<!--<input id="inp" type='file'>
+<p id="b64"></p>
+<img id="img" height="150">-->
+<!--
+imggggggggggggg-->
+
+
+    <div  id="submit1" class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button id="submit" class="btn btn-default">Submit</button>
+        <button id="clear" type="reset" class="btn btn-default">Clear</button>
+      </div>
+    </div>
+    <div id="id-message" title="Employee added">
+        <p>
+            <span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
+           This id already exists  </p>
+    </div>
+  </form>
+</div>
+<div class="header" id="editable">
+    
+        <h2>Accident List</h2><br>
+        <div id="row1">
+        <table id="t1" class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Ref No</th>
+              <th>Accident Date</th>
+              <th>Accident Time</th>
+              <th>Accident Type</th>
+                <th>City</th>
+              <th>District</th>
+              <th>Vehicles</th>
+              <th>Casualties</th>
+                <th>Name</th>
+                <!--<th>Image</th>-->
+              
+            </tr>
+          </thead>
+          <tbody>
+          <!--<td><button class="btnDelete">Delete</button></td>-->
+          </tbody>
+        </table>
+        <br>
+    </div>
+    </div>
+
+     <div  id="cne" class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button id="edit" class="btn btn-default">Edit</button>
+        <button id="confirm"  class="btn btn-default">Confirm</button>
+         <button id="close" class="btn btn-default" data-target="file:///home/experion/Desktop/exam-edited/formindex.html">close</button><br><br>
+        
+      </div>
+    </div>
+
+</div>   
+    
+</body>
+</html>

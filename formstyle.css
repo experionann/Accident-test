@@ -1,0 +1,72 @@
+#img{
+    margin-left:17%;
+}
+.image1{
+    margin-left:-18%;
+}
+#cne{
+    margin-left: -1%;
+}
+
+#id-message{
+    display:none;
+}
+
+.container{
+     background-color: rgba(19, 35, 47, 0.9);
+    color: #1ab188;
+    width: 100%!important;
+}
+
+
+.form-control{
+    
+    color: #555;
+    background-color: #acacac;
+   
+    border: 1px solid #ccc;
+ 
+}
+
+#edit{
+    background-color: rgba(19, 35, 47, 0.9);
+    color: #1ab188;
+}
+
+#close{
+    background-color: rgba(19, 35, 47, 0.9);
+    color: #1ab188;
+}
+#clear{
+    background-color: rgba(19, 35, 47, 0.9);
+    color: #1ab188;
+}
+
+#submit{
+    background-color: rgba(19, 35, 47, 0.9);
+    color: #1ab188;
+}
+
+#confirm{
+    background-color: rgba(19, 35, 47, 0.9);
+    color: #1ab188;
+}
+
+
+#form .form-control {
+    display: block;
+    width: 88%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: black;
+    background-color: #acacac;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#close{
+    display: none;
+}
