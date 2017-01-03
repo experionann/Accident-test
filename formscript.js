@@ -3,75 +3,34 @@ var ids = new Array();
 $(function () {
 
 
-    $("#datepicker").datepicker({
+    $("#datepicker").datepicker({                                           //Styling Datepicker
         format: 'dd/mm/yyyy',
         maxDate: new Date(),
         todayHighlight: true,
         autoclose: true
     });
 
-    // $("#tbUser").on('click', '.btnDelete', function () {
-    //     $(this).parents('tr').first().remove();
-    //     });
 
-
-    $('#submit').click(function (e) {
+    $('#submit').click(function (e) {                                        //The save method
         e.preventDefault();
-
-        // }
-
-        // else {
         var rno = $('#refno').val();
-
-        // c=0;n=0;
         var regexVal = new RegExp("^(?=.*[A-Z])(?=.*[0-9])");
-        var result = regexVal.test(rno);
+        var result = regexVal.test(rno);                                     //search for a match between RE and string(rno)
 
-        if (!result) {
-            alert("An uppercase letter and a digit is a must for a Reference Number");
-            
+        if ($('#refno').val() == "") {                                       //if a field is empty alert is generated
+            alert('Please fill the Reference Number field');
         }
-
-
-        //     for(i=0;i<rno.length;i++)
-        //     {
-        //         if('A'>= rno[i] && rno[i]<='Z' )
-        //         {
-        //             c++;
-        //         console.log("Char works",c);
-        //         }
-        //         if('0'>=rno[i] && rno[i]<='9' )
-        //         {
-        //             n++;
-        //                console.log("No works",n);
-
-        //     }}
-
-        //          if(c===0||n===0 )
-        //         {
-        //             alert("An uppercase letter is must for a Reference Number");
-        //         }
-
-        //          if(n===0 )
-        //         {
-        //             alert("A digit is must for a Reference Number");
-        //         }
-
-              if ($('#refno').val() == "") {
-        alert('Please fill the ref no field');
-                    }
-
-
-
-
+        else if (!result) {                                                  //If result is false
+            alert("Reference Number should contain atleast one uppercase letter and digits");
+        }
         else if ($('#datepicker').val() == "") {
-            alert('Please fill the date field');
+            alert('Please fill the accident date field');
         }
         else if ($('#time').val() == "") {
             alert('Please enter the accident time');
         }
         else if ($('#acdttype').val() == "--Select--") {
-            alert('Please select the acdttype');
+            alert('Please select the accident type');
         }
         else if ($('#city').val() == "") {
             alert('Please fill the city field');
@@ -83,11 +42,11 @@ $(function () {
             alert('Please fill the vehicles field');
         }
         else if ($('#vehicles').val() < 0) {
-            alert("Number cannot be a negative value");
+            alert("Number cannot be a negative");
         }
 
         else if ($('#casuality').val() == "") {
-            alert('Please fill the casuality field');
+            alert('Please fill the casualty field');
         }
         else if ($('#name').val() == "") {
             alert('Please fill the name field');
@@ -95,8 +54,7 @@ $(function () {
         else {
             var i;
             var flag = 0;
-
-            var new_refno = $('#refno').val();
+            var new_refno = $('#refno').val();                                  //All the field values are stored to new variables
             var new_dob = $('#datepicker').val();
             var new_time = $('#time').val();
             var new_acdttype = $('#acdttype').val();
@@ -105,12 +63,13 @@ $(function () {
             var new_vehicles = $('#vehicles').val();
             var new_casuality = $('#casuality').val();
             var new_name = $('#name').val();
+
             for (i = 0; i < ids.length; i++) {
-                if (new_refno === ids[i]) {
+                if (new_refno === ids[i]) {                                    //Refno should be unique else flag is set
                     flag = 1;
                 }
             }
-            if (flag === 0) {
+            if (flag === 0) {                                                   //Appends new row to the table
                 console.log("working");
                 var newRow = jQuery('<tr><td>' + new_refno + '</td><td>' + new_dob + '</td><td>' + new_time + '</td><td>' + new_acdttype + '</td><td>' + new_city + '</td><td>' + new_district + '</td><td>' + new_vehicles + '</td><td>' + new_casuality + '</td><td>' + new_name + '</td></tr>');
                 jQuery('#t1').append(newRow);
@@ -123,34 +82,20 @@ $(function () {
 
     });
 
-    $("#close").click(function () {
-        //   window.open();
-        // window.close();
-        var url = $(this).data('target');
-        location.replace(url);
+    $("#close").click(function () {                                          // close button exits the current window
+        window.open();
+        window.close();
+        // var url = $(this).data('target');
+        // location.replace(url);
 
     });
 
-    $('#edit').click(function () {
-
+    $('#edit').click(function () {                                           // To edit the last entered user         
         $("#editable").hide();
         $("#clear").hide();
         $("#edit").hide();
 
     });
-
-    //     function readFile() {
-    //   if (this.files && this.files[0]) {
-    //     var FR= new FileReader();
-    //     FR.onload = function(e) {
-    //       document.getElementById("img").src       = e.target.result;
-    //       document.getElementById("b64").innerHTML = e.target.result;
-    //     };       
-    //     FR.readAsDataURL( this.files[0] );
-    //   }
-    // }
-
-    // document.getElementById("inp").addEventListener("change", readFile, false);
 
     $('#confirm').click(function () {
         $(".form-horizontal").hide("slow", function () {
@@ -161,7 +106,7 @@ $(function () {
 
     });
 
-});
 
+});
 
 

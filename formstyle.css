@@ -13,7 +13,7 @@
 }
 
 .container{
-     background-color: rgba(19, 35, 47, 0.9);
+    background-color: rgba(19, 35, 47, 0.9);
     color: #1ab188;
     width: 100%!important;
 }
@@ -70,3 +70,4 @@
 #close{
     display: none;
 }
+ 
